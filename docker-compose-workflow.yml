@@ -10,6 +10,7 @@ networks:
 services:
   scala-common-nlp-japanese-web:
     image: scala-common-nlp-japanese-web:0.1-SNAPSHOT
+    tty: true
     environment:
       - PRIVATE_IP_ADDRESS=172.30.0.2
       - PLAY_HTTP_PORT=9006
