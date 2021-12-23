@@ -8,7 +8,7 @@ on:
 env:
   PJ_ACTOR: toposoid
   PJ_REPO: scala-common-nlp-japanese-web
-  PJ_BRANCH: main
+  PJ_BRANCH: feature
   PJ_VERSION: 0.1-SNAPSHOT
 jobs:
   unit-test_scala-common-nlp-japanese-web:
