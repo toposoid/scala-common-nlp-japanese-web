@@ -8,6 +8,8 @@ ENV _JAVA_OPTIONS="-Xms512m -Xmx4g"
 RUN git clone https://github.com/toposoid/scala-common-nlp-japanese.git \
 && cd scala-common-nlp-japanese \
 && git checkout ${TARGET_BRANCH} \
+&& mv -f /tmp/entity_vector.model.bin src/main/resources/ \
+&& mv -f /tmp/wnjpn.db src/main/resources/ \
 && sbt publishLocal \
 && cd .. \
 && git clone https://github.com/toposoid/scala-common-nlp-japanese-web.git \
