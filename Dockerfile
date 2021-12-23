@@ -5,7 +5,12 @@ ARG TARGET_BRANCH
 ENV DEPLOYMENT=local
 ENV _JAVA_OPTIONS="-Xms512m -Xmx4g"
 
-RUN git clone https://github.com/toposoid/scala-common-nlp-japanese-web.git \
+RUN git clone https://github.com/toposoid/scala-common-nlp-japanese.git \
+&& cd scala-common-nlp-japanese \
+&& git checkout ${TARGET_BRANCH} \
+&& sbt publishLocal \
+&& cd .. \
+&& git clone https://github.com/toposoid/scala-common-nlp-japanese-web.git \
 && cd scala-common-nlp-japanese-web \
 && git fetch origin ${TARGET_BRANCH} \
 && git checkout ${TARGET_BRANCH} \
